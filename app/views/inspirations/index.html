@@ -2,8 +2,10 @@
   <%= form_for @inspiration do |f| %>
 
     <p>
-      I wish somebody would make a device to sense <%= f.text_field :sense, class: "form-control" %><br>
-      because it would be really useful for <%= f.text_field :application, class: "form-control long"  %>.
+      I wish somebody would make a device to sense<br>
+      <%= f.text_field :sense, class: "form-control" %><br>
+      because it would be really useful for<br>
+      <%= f.text_field :application, class: "form-control long"  %>.
     </p>
 
     <canvas id="simple_sketch" width="300" height="300"></canvas>
