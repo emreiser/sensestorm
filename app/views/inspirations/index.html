@@ -1,0 +1,38 @@
+<div class="container">
+  <%= form_for @inspiration do |f| %>
+
+    <p>
+      I wish somebody would make a device to sense <%= f.text_field :sense, class: "form-control" %><br>
+      because it would be really useful for <%= f.text_field :application, class: "form-control long"  %>.
+    </p>
+
+    <canvas id="simple_sketch" width="300" height="300"></canvas>
+
+    <%= f.hidden_field :image, id: "image" %>
+
+    <%= f.submit "Save", class: "btn btn-info", id: "form-submit" %>
+  <% end %>  
+
+  <div class="inspirations-list">
+    <% @inspirations.each do |i| %>
+      <p> 
+        I wish somebody would make a device to sense <span class="highlight"><%= i.sense %></span> because it would be really useful for <span class="highlight"><%= i.application %></span>.<br>
+      </p>
+      <%= image_tag("#{i.image}") %>.
+    <% end %>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $('#simple_sketch').sketch();
+  });
+
+  $("#form-submit").on("click", function(e){
+    e.preventDefault();
+    var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL('image/png')
+    $("#image").val(dataUrl);
+    $("#new_inspiration").submit();
+  });
+</script>

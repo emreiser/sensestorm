@@ -1,0 +1,45 @@
+.center {
+  text-align: "center";
+}
+
+.home {
+  background: #f1c40f;
+  color: #16a085;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 40px !important;
+  margin: 50px 0;
+}
+
+.btn-info {
+  background: #16a085;
+  font-size: 28px;
+}
+
+.form-control {
+  width: auto;
+  min-width: 300px;
+  display: inline-block;
+
+  &.long {
+    width: 500px;
+  }
+}
+
+.highlight {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.inspirations-list {
+  font-size: 28px;
+}
+
+canvas {
+  background: whitesmoke;
+  display: block;
+  margin: 20px 0;
+}
+
+form {
+  margin-bottom: 40px;
+}
