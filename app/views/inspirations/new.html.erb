@@ -1,0 +1,30 @@
+<div class="container">
+  <%= form_for @inspiration do |f| %>
+
+    <p class="prompt">What is home like for you?</p>
+    
+    <%= f.text_area :sense, class: "form-control", cols: "65", rows: "2" %>
+    <canvas id="simple_sketch" width="500" height="250"></canvas>
+
+    <%= f.hidden_field :image, id: "image" %>
+
+    <%= f.submit "Submit", class: "btn btn-info", id: "form-submit" %>
+  <% end %>  
+</div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $('#simple_sketch').sketch();
+    canvas = document.getElementById('simple_sketch').getContext("2d")
+    canvas.lineWidth = 5;
+  });
+
+  $("#form-submit").on("click", function(e){
+    e.preventDefault();
+    var canvas = document.getElementsByTagName("canvas")[0]
+    canvas.fillStyle = "white";
+    $("#image").val(canvas.toDataURL('image/jpg'));
+    $("#new_inspiration").submit();
+  });
+</script>

@@ -3,13 +3,12 @@
 }
 
 .home {
-  font-size: 28px !important;
   margin: 50px 0;
 }
 
 .btn-info {
   background: #16a085;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .form-control {
@@ -28,13 +27,23 @@
 }
 
 .inspirations-list {
-  font-size: 28px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.prompt {
+  font-family: 'La Belle Aurore', cursive;
+  background: white;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 canvas {
   background: whitesmoke;
   display: block;
-  margin: 20px 0;
+  margin: 10px 0;
   cursor: url("https://dl.dropboxusercontent.com/s/mm2ski62p7xx7ae/pen.png") 27 27, auto;
 }
 

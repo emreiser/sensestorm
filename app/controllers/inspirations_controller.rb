@@ -1,7 +1,10 @@
 class InspirationsController < ApplicationController
 
   def index
-    @inspirations = Inspiration.all
+    @inspirations = Inspiration.all.order(created_at: :desc)
+  end
+
+  def new
     @inspiration = Inspiration.new
   end
 
