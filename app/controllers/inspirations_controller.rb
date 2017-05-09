@@ -10,15 +10,9 @@ class InspirationsController < ApplicationController
 
   def create
     @inspiration = Inspiration.create!(inspiration_params)
-    data = inspiration_params[:image]
-    filename = "image_#{@inspiration.id}_#{DateTime.now.to_date}.jpg"
+    image_data = inspiration_params[:image]
 
-    File.open("#{Rails.root}/public/#{filename}", 'wb') do |f|
-      f.write Base64.decode64(data['data:image/jpg;base64,'.length .. -1])
-    end
-
-    @inspiration.image = URI.join(root_url, filename).to_s
-    @inspiration.save
+    @inspiration.upload_image_to_s3(image_data)
     redirect_to action: "index"
   end
 
