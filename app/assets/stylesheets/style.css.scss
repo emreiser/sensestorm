@@ -12,16 +12,6 @@
   margin-top: 30px;
 }
 
-.form-control {
-  width: auto;
-  min-width: 300px;
-  display: inline-block;
-
-  &.long {
-    width: 500px;
-  }
-}
-
 .highlight {
   font-size: 1.2em;
   font-weight: bold;
@@ -41,6 +31,10 @@
   margin-bottom: 20px;
 }
 
+.form-control {
+  max-width: 500px;
+}
+
 canvas {
   background: whitesmoke;
   display: block;
@@ -57,11 +51,27 @@ form {
   background: white;
   cursor: pointer;
   position: absolute;
-  left: 530px;
+  left: 410px;
   color: #696969;
   text-decoration: none;
 
   &:hover {
     color: #151515;
+  }
+}
+
+
+@media (max-width: 500px){
+  canvas {
+    width: 100%;
+  }
+
+  #clear {
+    left: auto;
+    right: 10px;
+  }
+
+  .prompt {
+    font-size: 32px;
   }
 }
