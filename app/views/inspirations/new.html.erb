@@ -1,11 +1,23 @@
+<div class="header container">
+  <ul>
+    <li class="active">
+      <%= link_to "Home", root_path %>
+    </li>
+    <li>
+      <%= link_to "View answers", inspirations_path %>
+  </ul>
+</div>
+
 <div class="container">
   <%= form_for @inspiration do |f| %>
 
     <p class="prompt">What is home like for you?</p>
     
     <%= f.text_area :sense, class: "form-control", cols: "65", rows: "2" %>
-    <canvas id="simple-sketch" width="500" height="250"></canvas>
-    <a id="clear">Clear canvas</a>
+    <div class="canvas-container">
+      <canvas id="simple-sketch" width="500" height="250"></canvas>
+      <a id="clear">Clear canvas</a>
+    </div>
 
     <%= f.hidden_field :image, id: "image" %>
 

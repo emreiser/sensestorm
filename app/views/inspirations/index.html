@@ -1,13 +1,26 @@
+
+<div class="header container">
+  <ul>
+    <li>
+      <%= link_to "Home", root_path %>
+    </li>
+    <li class="active">
+      <%= link_to "View answers", inspirations_path %>
+  </ul>
+</div>
+
 <div class="container">
   <p class="prompt">What is home like for you?</p>
 </div>
 
 <div class="container inspirations-list">
   <% @inspirations.each do |i| %>
-    <p class="answer"> 
-      <%= i.sense %>
-    </p>
-    <img src=<%= "#{i.image}" %>>
+    <div class="answer"> 
+      <p>
+        <%= i.sense %>
+      </p>
+      <img class="image" src=<%= "#{i.image}" %>>
+    </div>
   <% end %>
 </div>
 
