@@ -4,8 +4,9 @@
 
 <div class="container inspirations-list">
   <% @inspirations.each do |i| %>
-    <p> 
-      <%= i.sense %><br>
+    <p class="answer"> 
+      <%= i.sense %>
+    </p>
     <img src=<%= "#{i.image}" %>>
   <% end %>
 </div>
