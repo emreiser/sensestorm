@@ -15,8 +15,12 @@
     
     <%= f.text_area :sense, class: "form-control", cols: "65", rows: "2" %>
     <div class="canvas-container">
-      <canvas id="simple-sketch" width="500" height="250"></canvas>
-      <a id="clear">Clear canvas</a>
+      <canvas id="simple-sketch" width="600" height="300"></canvas>
+      <div class="palette">
+        <ul>
+          <a id="clear">Clear canvas</a> 
+        </ul>
+      </div>
     </div>
 
     <%= f.hidden_field :image, id: "image" %>
@@ -27,7 +31,14 @@
 
 
 <script type="text/javascript">
+  var colors = ["turquoise", "#cfee8b", "gold", "#ff7759", "black"];
+  colors.forEach(function(color){
+    var $a = $("<a>", {href: '#simple-sketch', "data-color": color, });
+    $a.append($("<li/>", {style: "background:" + color}));
+    $(".palette ul").append($a);
+  });
   var sketch = $('#simple-sketch').sketch();
+  sketch.sketch('size', 3);
 
   $("#clear").on("click", function(){
     sketch.sketch().actions = [];

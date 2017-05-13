@@ -1,3 +1,5 @@
+$width: 600px;
+
 .center {
   text-align: "center";
 }
@@ -68,7 +70,7 @@
 }
 
 .answer {
-  max-width: 500px;
+  max-width: $width;
   margin-bottom:30px;
   border-bottom: 1px solid #46b8da;
 
@@ -82,12 +84,12 @@
 }
 
 .form-control {
-  max-width: 500px;
+  max-width: $width;
 }
 
 .canvas-container {
   position: relative;
-  max-width: 500px;
+  max-width: $width;
 }
 
 canvas {
@@ -97,12 +99,30 @@ canvas {
   cursor: url("https://dl.dropboxusercontent.com/s/mm2ski62p7xx7ae/pen.png") 27 27, auto;
 }
 
+.palette {
+  ul {
+    padding: 5px 0;
+    li {
+      display: inline-block;
+      margin: 5px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 form {
   margin-bottom: 40px;
 }
 
 #clear {
-  padding: 10px;
+  padding: 5px 10px;
   background: white;
   cursor: pointer;
   position: absolute;
@@ -116,7 +136,7 @@ form {
 }
 
 
-@media (max-width: 500px){
+@media (max-width: $width){
   .canvas-container, canvas, .answer, .image {
     width: 100%;
   }
